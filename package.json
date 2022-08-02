@@ -1,6 +1,6 @@
 {
   "name": "astro-stylegan3",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Astro + StyleGAN3 style",
   "author": {
     "name": "AREA44"
@@ -14,6 +14,6 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "astro": "1.0.0-rc.2"
+    "astro": "1.0.0-rc.3"
   }
 }

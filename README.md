@@ -1,5 +1,7 @@
 # Simple template with Astro and StyleGAN3 style
 
+[![Github Pages Astro CI](https://github.com/AREA44/astro-stylegan3/actions/workflows/deploy.yml/badge.svg)](https://github.com/AREA44/astro-stylegan3/actions/workflows/deploy.yml)
+
 ## 🐳 Preview
 
 - [GitHub Pages](https://AREA44.github.io/astro-stylegan3/)
@@ -22,4 +24,4 @@ All commands are run from the root of the project, from a terminal:
 ## 💕 Resources
 
 - [StyleGAN3 style](https://nvlabs.github.io/stylegan3)
-- [Pixabay](https://pixabay.com/)
+- [Pixabay](https://pixabay.com)
