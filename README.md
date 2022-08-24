@@ -1,10 +1,10 @@
 # Simple template with Astro and StyleGAN3 style
 
-[![Github Pages Astro CI](https://github.com/AREA44/astro-stylegan3/actions/workflows/deploy.yml/badge.svg)](https://github.com/AREA44/astro-stylegan3/actions/workflows/deploy.yml)
+[![Deploy Astro site to Pages](https://github.com/AREA44/astro-stylegan3/actions/workflows/pages.yml/badge.svg)](https://github.com/AREA44/astro-stylegan3/actions/workflows/pages.yml)
 
 ## 🐳 Preview
 
-- [GitHub Pages](https://AREA44.github.io/astro-stylegan3/)
+- [GitHub Pages](https://AREA44.github.io/astro-stylegan3)
 
 ## 🧞 Commands
 

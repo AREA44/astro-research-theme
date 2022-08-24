@@ -1,0 +1,35 @@
+name: Build with Astro
+
+on:
+  pull_request:
+    branches: [ main ]
+  
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository using git
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16" 
+      - name: Restore cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            dist
+          key: ${{ runner.os }}-astro-build-${{ hashFiles('dist') }}
+          restore-keys: |
+            ${{ runner.os }}-astro-build-
+      - name: Install dependencies
+        run: npm install
+      - name: Build with Astro
+        run: npm run build
