@@ -1,5 +1,9 @@
 ---
-import "./styles/global.css"
+import "../styles/global.css";
+import Title from "../components/Title.astro";
+import Banner from "../components/Banner.astro";
+import Video from "../components/Video.astro";
+import Section from "../components/Section.astro";
 
 let title = "Astro and StyleGAN3 style";
 let description = "Simple template with Astro and StyleGAN3 style";
@@ -26,43 +30,14 @@ let url = "https://area44.github.io/astro-stylegan3";
 <body>
   <div class="n-header">
   </div>
-  
-  <div class="n-title">
-    <h1>
-      Astro + StyleGAN3 style
-    </h1>
-  </div>
-  
-  <div class="n-byline">
-    <div class="byline">
-      <ul class="authors">
-        <li>
-          Long Nhat Nguyen
-          <sup>
-            1
-          </sup>
-        </li>
-      </ul>
-      <ul class="authors affiliations">
-        <li>
-          <sup>
-            1
-          </sup>
-          AREA44
-        </li>
-      </ul>
-    </div>
-  </div>
-  
+
+  <Title title="Astro + StyleGAN3 style" />
+
   <div class="n-article">
-    <div class="l-article">
-      <img src="./banner.jpg" width="100%" />
-    </div>
+
+    <Banner src="./banner.jpg" />
     
-    <h2 id="abstract">
-      Abstract
-    </h2>
-    <p>
+    <Section id="Abstract">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
       Duis congue, dui sit amet commodo tempus, lorem ante tincidunt neque, 
       vitae vulputate augue turpis vel nisl. Sed facilisis faucibus laoreet. 
@@ -72,83 +47,33 @@ let url = "https://area44.github.io/astro-stylegan3";
       Aliquam aliquam dictum nulla, euismod imperdiet diam aliquam a. 
       Mauris pharetra nunc nisi. Nunc sed dolor suscipit metus tempus varius. 
       Pellentesque in metus id risus interdum viverra id vel urna.
-    </p>
+    </Section>
     
-    <h2 id="links">
-      Links
-    </h2>
-    <div class="grid download-section">
-      <div class="download-thumb">
-        <a href="https://raw.githubusercontent.com/AREA44/astro-stylegan3/main/public/banner.jpg">
-          <img class="dropshadow" src="./download.jpg" />
-        </a>
-      </div>
-      <div class="download-links">
-        <ul>
-          <li>
-            <a href="https://raw.githubusercontent.com/AREA44/astro-stylegan3/main/public/banner.jpg">
-              Banner
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/AREA44/astro-stylegan3">
-              Code release on GitHub
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-    <h2 id="videos">
-      Videos
-    </h2>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Duis congue, dui sit amet commodo tempus, lorem ante tincidunt neque, 
-      vitae vulputate augue turpis vel nisl. Sed facilisis faucibus laoreet. 
-      Proin convallis, enim at iaculis facilisis, lorem sapien ullamcorper magna, 
-      id feugiat diam risus sit amet turpis. Vestibulum bibendum venenatis justo nec pharetra. 
-      Vestibulum interdum blandit lectus, ut mollis urna ullamcorper id. Aliquam erat volutpat. 
-      Aliquam aliquam dictum nulla, euismod imperdiet diam aliquam a. 
-      Mauris pharetra nunc nisi. Nunc sed dolor suscipit metus tempus varius. 
-      Pellentesque in metus id risus interdum viverra id vel urna.
-    </p>
-    <div class="l-page video">
-      <video controls loop width="100%">
-        <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
-        <source src="Jellyfish-110877.mp4#t=0.001"
-          type="video/mp4" />
-      </video>
-      <div class="videocaption">
-        <div>
-          <strong>
-            Jellyfish:
-          </strong>
-          From Pixabay
+    <Section id="Links">
+      <div class="grid download-section">
+        <div class="download-thumb">
+          <a href="https://raw.githubusercontent.com/AREA44/astro-stylegan3/main/public/banner.jpg">
+            <img class="dropshadow" src="./download.jpg" />
+          </a>
+        </div>
+        <div class="download-links">
+          <ul>
+            <li>
+              <a href="https://raw.githubusercontent.com/AREA44/astro-stylegan3/main/public/banner.jpg">
+                Banner
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/AREA44/astro-stylegan3">
+                Code release on GitHub
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
+    </Section>
     
-    <h2 id="citation">
-      Citation
-    </h2>
-    <pre>
-      <code is:raw>
-        @article{
-          long-nhat-nguyen-2022-astro-stylegan3,
-          title = {Astro + StyleGAN3 style},
-          author = {Long Nhat Nguyen},
-          year = {2022},
-          month = {09},
-          day = {01},
-        }
-      </code>
-    </pre>
-    
-    <h2 id="license">
-      License
-    </h2>
-    <p>
+    <Section id="Videos">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
       Duis congue, dui sit amet commodo tempus, lorem ante tincidunt neque, 
       vitae vulputate augue turpis vel nisl. Sed facilisis faucibus laoreet. 
@@ -158,12 +83,26 @@ let url = "https://area44.github.io/astro-stylegan3";
       Aliquam aliquam dictum nulla, euismod imperdiet diam aliquam a. 
       Mauris pharetra nunc nisi. Nunc sed dolor suscipit metus tempus varius. 
       Pellentesque in metus id risus interdum viverra id vel urna.
-    </p>
+      <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
+      <Video src="Jellyfish-110877.mp4#t=0.001" />
+    </Section>
     
-    <h2 id="acknowledgments">
-      Acknowledgments
-    </h2>
-    <p>
+    <Section id="Citation">
+      <pre>
+        <code is:raw>
+          @article{
+            long-nhat-nguyen-2022-astro-stylegan3,
+            title = {Astro + StyleGAN3 style},
+            author = {Long Nhat Nguyen},
+            year = {2022},
+            month = {09},
+            day = {01},
+          }
+        </code>
+      </pre>
+    </Section>
+    
+    <Section id="License">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
       Duis congue, dui sit amet commodo tempus, lorem ante tincidunt neque, 
       vitae vulputate augue turpis vel nisl. Sed facilisis faucibus laoreet. 
@@ -173,7 +112,19 @@ let url = "https://area44.github.io/astro-stylegan3";
       Aliquam aliquam dictum nulla, euismod imperdiet diam aliquam a. 
       Mauris pharetra nunc nisi. Nunc sed dolor suscipit metus tempus varius. 
       Pellentesque in metus id risus interdum viverra id vel urna.
-    </p>
+    </Section>
+    
+    <Section id="Acknowledgments">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Duis congue, dui sit amet commodo tempus, lorem ante tincidunt neque, 
+      vitae vulputate augue turpis vel nisl. Sed facilisis faucibus laoreet. 
+      Proin convallis, enim at iaculis facilisis, lorem sapien ullamcorper magna, 
+      id feugiat diam risus sit amet turpis. Vestibulum bibendum venenatis justo nec pharetra. 
+      Vestibulum interdum blandit lectus, ut mollis urna ullamcorper id. Aliquam erat volutpat. 
+      Aliquam aliquam dictum nulla, euismod imperdiet diam aliquam a. 
+      Mauris pharetra nunc nisi. Nunc sed dolor suscipit metus tempus varius. 
+      Pellentesque in metus id risus interdum viverra id vel urna.
+    </Section>
   </div>
   
   <div class="n-footer">

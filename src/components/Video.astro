@@ -1,0 +1,17 @@
+---
+const {src} = Astro.props;
+---
+
+<div class="l-page video">
+  <video controls loop width="100%">
+    <source src={src} type="video/mp4" />
+  </video>
+  <div class="videocaption">
+    <div>
+      <strong>
+        Jellyfish:
+      </strong>
+      From Pixabay
+    </div>
+  </div>
+</div>
