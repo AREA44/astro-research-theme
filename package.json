@@ -14,6 +14,6 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "astro": "1.6.14"
+    "astro": "1.6.15"
   }
 }
