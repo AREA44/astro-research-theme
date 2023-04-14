@@ -1,19 +1,27 @@
+# To get started with Astro see: https://docs.astro.build/en/getting-started
 name: Deploy Astro site to Pages
 
 on:
   push:
     branches: [main]
 
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
+
+env:
+  BUILD_PATH: "."
 
 defaults:
   run:
@@ -27,6 +35,8 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Node
         uses: actions/setup-node@v3
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
       - name: Restore cache
         uses: actions/cache@v3
         with:
@@ -36,13 +46,17 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-astro-build-
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
       - name: Build with Astro
-        run: npm run build
+        run: |
+          pnpm build \
+          --site "https://area44.github.io" \
+          --base "astro-stylegan3"
+        working-directory: ${{ env.BUILD_PATH }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./dist
+          path: ${{ env.BUILD_PATH }}/dist
 
   deploy:
     environment:

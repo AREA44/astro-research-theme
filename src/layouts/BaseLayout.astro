@@ -1,0 +1,26 @@
+---
+import MainHead from "../components/MainHead.astro";
+
+interface Props {
+  title?: string | undefined;
+  description?: string | undefined;
+  ogImage?: URL | undefined;
+}
+
+const { title, description, ogImage } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <MainHead title={title} description={description} ogImage={ogImage}>
+      <!-- inline stylesheet files into the above <style> element -->
+      <link
+        href="https://fonts.googleapis.com/css?family=Montserrat|Segoe+UI"
+        rel="stylesheet"
+      />
+    </MainHead>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
