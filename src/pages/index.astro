@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
-import Links from '../components/Links.astro';
 import Video from '../components/Video.astro';
 
 interface Props {
@@ -77,7 +76,7 @@ let links = [
 
   <div class="n-article">
     <div class="l-article">
-      <img src={banner} width="100%" />
+      <img src={banner} width="100%" alt="Banner"/>
     </div>
 
     <Section id="Abstract">
@@ -92,10 +91,32 @@ let links = [
       varius. Pellentesque in metus id risus interdum viverra id vel urna.
     </Section>
 
-    <Links
-      pdf="https://raw.githubusercontent.com/AREA44/astro-research-theme/main/public/pdf-sample.pdf"
-      links={links}
-    />
+    <Section id="Links">
+      <div class="grid download-section">
+        <div class="download-thumb">
+          <a href="https://raw.githubusercontent.com/AREA44/astro-research-theme/main/public/pdf-sample.pdf">
+            <img
+              class="dropshadow"
+              src="./download-thumb.jpg"
+              width="300"
+              height="400"
+              alt="Download Thumb"
+            />
+          </a>
+        </div>
+        <div class="download-links">
+          <ul>
+            {
+              links.map((link) => (
+                <li>
+                  <a href={link.url}>{link.id}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </Section>
 
     <Section id="Videos">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis congue, dui
