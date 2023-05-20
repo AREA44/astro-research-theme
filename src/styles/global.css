@@ -6,13 +6,15 @@
 html {
   font-size: 14px;
   line-height: 1.6;
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 
-@media(min-width: 768px) {
+@media (min-width: 768px) {
   html {
     font-size: 16px;
   }
@@ -40,8 +42,7 @@ body {
   grid-column-gap: 8px;
 }
 
-@media(min-width: 768px) {
-
+@media (min-width: 768px) {
   .base-grid,
   .n-header,
   .n-byline,
@@ -59,8 +60,7 @@ body {
   }
 }
 
-@media(min-width: 1000px) {
-
+@media (min-width: 1000px) {
   .base-grid,
   .n-header,
   .n-byline,
@@ -79,7 +79,6 @@ body {
 }
 
 @media (min-width: 1180px) {
-
   .base-grid,
   .n-header,
   .n-byline,
@@ -95,7 +94,6 @@ body {
   .grid {
     grid-column-gap: 32px;
   }
-
 }
 
 .base-grid {
@@ -103,11 +101,11 @@ body {
 }
 
 /* default grid column assignments */
-.n-title>* {
+.n-title > * {
   grid-column: text;
 }
 
-.n-article>* {
+.n-article > * {
   grid-column: text;
 }
 
@@ -147,7 +145,7 @@ strong {
 /*------------------------------------------------------------------*/
 /* title */
 .n-title h1 {
-  font-family: "Barlow", system-ui, Arial, sans-serif;
+  font-family: 'Barlow', system-ui, Arial, sans-serif;
   color: #082333;
   grid-column: text;
   font-size: 40px;
@@ -284,7 +282,7 @@ ul.authors.affiliations li {
 */
 .download-section {
   display: grid;
-  grid-template-areas: "links";
+  grid-template-areas: 'links';
 }
 
 .download-section h4 {
@@ -305,10 +303,10 @@ img.dropshadow {
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
 }
 
-@media(min-width: 1180px) {
+@media (min-width: 1180px) {
   .download-section {
     display: grid;
-    grid-template-areas: "thumb links";
+    grid-template-areas: 'thumb links';
   }
 
   .download-thumb {
@@ -392,7 +390,7 @@ h3.figtitle {
   border-color: rgba(0, 0, 0, 0.7);
   border-width: 1px;
   border-style: solid;
-  opacity: 1.0;
+  opacity: 1;
 }
 
 .grid {

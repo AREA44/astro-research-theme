@@ -1,7 +1,7 @@
 {
-  "name": "@area44/astro-stylegan3-starter",
-  "version": "2.1.0",
-  "description": "Simple starter with Astro and StyleGAN3 style",
+  "name": "@area44/astro-research-theme",
+  "version": "23.5.21",
+  "description": "Astro Research Theme",
   "author": {
     "name": "AREA44"
   },
@@ -10,9 +10,15 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "format": "prettier -w . --cache"
   },
+  "dependencies": {
+    "astro": "^2.5.1"
+  },
+  "packageManager": "pnpm@8.5.1",
   "devDependencies": {
-    "astro": "^2.3.0"
+    "prettier": "^2.8.8",
+    "prettier-plugin-astro": "^0.9.0"
   }
 }

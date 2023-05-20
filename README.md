@@ -1,8 +1,8 @@
-# Astro StyleGAN3 Starter
+# Astro Research Theme
 
-[![Deploy Astro site to Pages](https://github.com/AREA44/astro-stylegan3/actions/workflows/pages.yml/badge.svg)](https://github.com/AREA44/astro-stylegan3/actions/workflows/pages.yml)
+[![Deploy Astro site to Pages](https://github.com/AREA44/astro-research-theme/actions/workflows/pages.yml/badge.svg)](https://github.com/AREA44/astro-research-theme/actions/workflows/pages.yml)
 
-Preview on [GitHub Pages](https://area44.github.io/astro-stylegan3)
+Preview on [GitHub Pages](https://area44.github.io/astro-research-theme)
 
 ## 🚀 Commands
 

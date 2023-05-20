@@ -10,7 +10,7 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 if (Astro.props.ogImage === undefined) {
-  Astro.props.ogImage = new URL("og.jpg", Astro.url);
+  Astro.props.ogImage = new URL("banner.jpg", Astro.url);
 }
 
 const { title, description, ogImage } = Astro.props;
@@ -39,3 +39,9 @@ const { title, description, ogImage } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={ogImage} />
+
+<link
+  href="https://fonts.googleapis.com/css?family=Montserrat|Segoe+UI"
+  rel="stylesheet"
+  crossorigin="anonymous"
+/>

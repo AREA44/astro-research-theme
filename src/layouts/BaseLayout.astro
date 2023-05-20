@@ -12,13 +12,7 @@ const { title, description, ogImage } = Astro.props;
 
 <html lang="en">
   <head>
-    <MainHead title={title} description={description} ogImage={ogImage}>
-      <!-- inline stylesheet files into the above <style> element -->
-      <link
-        href="https://fonts.googleapis.com/css?family=Montserrat|Segoe+UI"
-        rel="stylesheet"
-      />
-    </MainHead>
+    <MainHead title={title} description={description} ogImage={ogImage} />
   </head>
   <body>
     <slot />

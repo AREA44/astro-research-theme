@@ -1,5 +1,11 @@
 ---
-const {src} = Astro.props;
+interface Props {
+  src: string;
+  name: string;
+  description: string;
+}
+
+const { src, name, description } = Astro.props;
 ---
 
 <div class="l-page video">
@@ -9,9 +15,9 @@ const {src} = Astro.props;
   <div class="videocaption">
     <div>
       <strong>
-        Jellyfish:
+        {name}:
       </strong>
-      From Pixabay
+      {description}
     </div>
   </div>
 </div>

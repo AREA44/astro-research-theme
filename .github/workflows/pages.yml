@@ -3,7 +3,7 @@ name: Deploy Astro site to Pages
 
 on:
   push:
-    branches: [main]
+    branches: ['main']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -17,15 +17,8 @@ permissions:
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
-
-env:
-  BUILD_PATH: "."
-
-defaults:
-  run:
-    shell: bash
 
 jobs:
   build:
@@ -33,11 +26,27 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
+
       - name: Setup Node
         uses: actions/setup-node@v3
+
       - name: Install pnpm
         uses: pnpm/action-setup@v2
-      - name: Restore cache
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Restore Astro cache
         uses: actions/cache@v3
         with:
           path: |
@@ -45,18 +54,17 @@ jobs:
           key: ${{ runner.os }}-astro-build-${{ hashFiles('dist') }}
           restore-keys: |
             ${{ runner.os }}-astro-build-
+
       - name: Install dependencies
         run: pnpm install
+
       - name: Build with Astro
-        run: |
-          pnpm build \
-          --site "https://area44.github.io" \
-          --base "astro-stylegan3"
-        working-directory: ${{ env.BUILD_PATH }}
+        run: pnpm build
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ${{ env.BUILD_PATH }}/dist
+          path: dist
 
   deploy:
     environment:
