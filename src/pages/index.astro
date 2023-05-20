@@ -1,134 +1,155 @@
 ---
-import "../styles/global.css";
-import Title from "../components/Title.astro";
-import Banner from "../components/Banner.astro";
-import Video from "../components/Video.astro";
-import Section from "../components/Section.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import Links from '../components/Links.astro';
+import Video from '../components/Video.astro';
 
-let title = "Astro and StyleGAN3 style";
-let description = "Simple template with Astro and StyleGAN3 style";
-let banner = "https://raw.githubusercontent.com/AREA44/astro-stylegan3/main/public/banner.jpg";
-let url = "https://area44.github.io/astro-stylegan3";
+interface Props {
+  title?: string | undefined;
+  description?: string | undefined;
+  banner?: URL | undefined;
+}
+
+// Your configuration options here
+let title = 'Astro Research Theme';
+let description = 'Simple Astro theme for research';
+let banner = './banner.jpg';
+let authors = [
+  {
+    id: '1',
+    name: 'Adam Allen',
+  },
+  {
+    id: '1',
+    name: 'Peter fadler',
+  },
+];
+let affiliations = [
+  {
+    id: '1',
+    name: 'AREA44',
+  },
+];
+let links = [
+  {
+    id: 'Paper PDF',
+    url: 'https://raw.githubusercontent.com/AREA44/astro-research-theme/main/public/pdf-sample.pdf',
+  },
+  {
+    id: 'Astro Banner',
+    url: 'https://raw.githubusercontent.com/AREA44/astro-research-theme/main/public/banner.jpg',
+  },
+  {
+    id: 'Code release on GitHub',
+    url: 'https://github.com/AREA44/astro-research-theme',
+  },
+];
 ---
 
-<html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1" name="viewport" />
-  <link href="./favicon.ico" rel="shortcut icon" />
-  <title>{title}</title>
-  <meta content={title} property="og:title" />
-  <meta content={description} name="description" property="og:description" />
-  <meta content={banner} property="og:image" />
-  <meta content={url} property="og:url" />
-
-  <!-- inline stylesheet files into the above <style> element -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat|Segoe+UI" rel="stylesheet" />
-</head>
-
-<body>
-  <div class="n-header">
+<BaseLayout title={title} description={description}>
+  <div class="n-title">
+    <h1>{title}</h1>
+  </div>
+  <div class="n-byline">
+    <div class="byline">
+      <ul class="authors">
+        {
+          authors.map((author) => (
+            <li>
+              {author.name}
+              <sup>{author.id}</sup>
+            </li>
+          ))
+        }
+      </ul>
+      <ul class="authors affiliations">
+        {
+          affiliations.map((affiliation) => (
+            <li>
+              <sup>{affiliation.id}</sup>
+              {affiliation.name}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </div>
 
-  <Title title="Astro + StyleGAN3 style" />
-
   <div class="n-article">
+    <div class="l-article">
+      <img src={banner} width="100%" />
+    </div>
 
-    <Banner src="./banner.jpg" />
-    
     <Section id="Abstract">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Duis congue, dui sit amet commodo tempus, lorem ante tincidunt neque, 
-      vitae vulputate augue turpis vel nisl. Sed facilisis faucibus laoreet. 
-      Proin convallis, enim at iaculis facilisis, lorem sapien ullamcorper magna, 
-      id feugiat diam risus sit amet turpis. Vestibulum bibendum venenatis justo nec pharetra. 
-      Vestibulum interdum blandit lectus, ut mollis urna ullamcorper id. Aliquam erat volutpat. 
-      Aliquam aliquam dictum nulla, euismod imperdiet diam aliquam a. 
-      Mauris pharetra nunc nisi. Nunc sed dolor suscipit metus tempus varius. 
-      Pellentesque in metus id risus interdum viverra id vel urna.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis congue, dui
+      sit amet commodo tempus, lorem ante tincidunt neque, vitae vulputate augue
+      turpis vel nisl. Sed facilisis faucibus laoreet. Proin convallis, enim at
+      iaculis facilisis, lorem sapien ullamcorper magna, id feugiat diam risus
+      sit amet turpis. Vestibulum bibendum venenatis justo nec pharetra.
+      Vestibulum interdum blandit lectus, ut mollis urna ullamcorper id. Aliquam
+      erat volutpat. Aliquam aliquam dictum nulla, euismod imperdiet diam
+      aliquam a. Mauris pharetra nunc nisi. Nunc sed dolor suscipit metus tempus
+      varius. Pellentesque in metus id risus interdum viverra id vel urna.
     </Section>
-    
-    <Section id="Links">
-      <div class="grid download-section">
-        <div class="download-thumb">
-          <a href="https://raw.githubusercontent.com/AREA44/astro-stylegan3/main/public/banner.jpg">
-            <img class="dropshadow" src="./download.jpg" />
-          </a>
-        </div>
-        <div class="download-links">
-          <ul>
-            <li>
-              <a href="https://raw.githubusercontent.com/AREA44/astro-stylegan3/main/public/banner.jpg">
-                Banner
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/AREA44/astro-stylegan3">
-                Code release on GitHub
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </Section>
-    
+
+    <Links
+      pdf="https://raw.githubusercontent.com/AREA44/astro-research-theme/main/public/pdf-sample.pdf"
+      links={links}
+    />
+
     <Section id="Videos">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Duis congue, dui sit amet commodo tempus, lorem ante tincidunt neque, 
-      vitae vulputate augue turpis vel nisl. Sed facilisis faucibus laoreet. 
-      Proin convallis, enim at iaculis facilisis, lorem sapien ullamcorper magna, 
-      id feugiat diam risus sit amet turpis. Vestibulum bibendum venenatis justo nec pharetra. 
-      Vestibulum interdum blandit lectus, ut mollis urna ullamcorper id. Aliquam erat volutpat. 
-      Aliquam aliquam dictum nulla, euismod imperdiet diam aliquam a. 
-      Mauris pharetra nunc nisi. Nunc sed dolor suscipit metus tempus varius. 
-      Pellentesque in metus id risus interdum viverra id vel urna.
-      <!-- t=0.001 is a hack to make iPhone show video thumbnail -->
-      <Video src="Jellyfish-110877.mp4#t=0.001" />
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis congue, dui
+      sit amet commodo tempus, lorem ante tincidunt neque, vitae vulputate augue
+      turpis vel nisl. Sed facilisis faucibus laoreet. Proin convallis, enim at
+      iaculis facilisis, lorem sapien ullamcorper magna, id feugiat diam risus
+      sit amet turpis. Vestibulum bibendum venenatis justo nec pharetra.
+      Vestibulum interdum blandit lectus, ut mollis urna ullamcorper id. Aliquam
+      erat volutpat. Aliquam aliquam dictum nulla, euismod imperdiet diam
+      aliquam a. Mauris pharetra nunc nisi. Nunc sed dolor suscipit metus tempus
+      varius. Pellentesque in metus id risus interdum viverra id vel urna.
+      <Video
+        src="Jellyfish-110877.mp4#t=0.001"
+        name="Jellyfish"
+        description="From Pixabay"
+      />
     </Section>
-    
+
     <Section id="Citation">
       <pre>
         <code is:raw>
-          @article{
-            long-nhat-nguyen-2022-astro-stylegan3,
-            title = {Astro + StyleGAN3 style},
-            author = {Long Nhat Nguyen},
-            year = {2022},
-            month = {09},
-            day = {01},
-          }
+@article{
+  title = {Astro Research Theme},
+  author = {AREA44},
+  year = {2023},
+  month = {05},
+  day = {21},
+}
         </code>
       </pre>
     </Section>
-    
-    <Section id="License">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Duis congue, dui sit amet commodo tempus, lorem ante tincidunt neque, 
-      vitae vulputate augue turpis vel nisl. Sed facilisis faucibus laoreet. 
-      Proin convallis, enim at iaculis facilisis, lorem sapien ullamcorper magna, 
-      id feugiat diam risus sit amet turpis. Vestibulum bibendum venenatis justo nec pharetra. 
-      Vestibulum interdum blandit lectus, ut mollis urna ullamcorper id. Aliquam erat volutpat. 
-      Aliquam aliquam dictum nulla, euismod imperdiet diam aliquam a. 
-      Mauris pharetra nunc nisi. Nunc sed dolor suscipit metus tempus varius. 
-      Pellentesque in metus id risus interdum viverra id vel urna.
-    </Section>
-    
-    <Section id="Acknowledgments">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Duis congue, dui sit amet commodo tempus, lorem ante tincidunt neque, 
-      vitae vulputate augue turpis vel nisl. Sed facilisis faucibus laoreet. 
-      Proin convallis, enim at iaculis facilisis, lorem sapien ullamcorper magna, 
-      id feugiat diam risus sit amet turpis. Vestibulum bibendum venenatis justo nec pharetra. 
-      Vestibulum interdum blandit lectus, ut mollis urna ullamcorper id. Aliquam erat volutpat. 
-      Aliquam aliquam dictum nulla, euismod imperdiet diam aliquam a. 
-      Mauris pharetra nunc nisi. Nunc sed dolor suscipit metus tempus varius. 
-      Pellentesque in metus id risus interdum viverra id vel urna.
-    </Section>
-  </div>
-  
-  <div class="n-footer">
-  </div>
-</body>
 
-</html>
+    <Section id="License">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis congue, dui
+      sit amet commodo tempus, lorem ante tincidunt neque, vitae vulputate augue
+      turpis vel nisl. Sed facilisis faucibus laoreet. Proin convallis, enim at
+      iaculis facilisis, lorem sapien ullamcorper magna, id feugiat diam risus
+      sit amet turpis. Vestibulum bibendum venenatis justo nec pharetra.
+      Vestibulum interdum blandit lectus, ut mollis urna ullamcorper id. Aliquam
+      erat volutpat. Aliquam aliquam dictum nulla, euismod imperdiet diam
+      aliquam a. Mauris pharetra nunc nisi. Nunc sed dolor suscipit metus tempus
+      varius. Pellentesque in metus id risus interdum viverra id vel urna.
+    </Section>
+
+    <Section id="Acknowledgments">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis congue, dui
+      sit amet commodo tempus, lorem ante tincidunt neque, vitae vulputate augue
+      turpis vel nisl. Sed facilisis faucibus laoreet. Proin convallis, enim at
+      iaculis facilisis, lorem sapien ullamcorper magna, id feugiat diam risus
+      sit amet turpis. Vestibulum bibendum venenatis justo nec pharetra.
+      Vestibulum interdum blandit lectus, ut mollis urna ullamcorper id. Aliquam
+      erat volutpat. Aliquam aliquam dictum nulla, euismod imperdiet diam
+      aliquam a. Mauris pharetra nunc nisi. Nunc sed dolor suscipit metus tempus
+      varius. Pellentesque in metus id risus interdum viverra id vel urna.
+    </Section>
+  </div>
+</BaseLayout>

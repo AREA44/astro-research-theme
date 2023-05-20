@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  base: "/astro-stylegan3",
+  site: 'https://area44.github.io/astro-research-theme',
 });
