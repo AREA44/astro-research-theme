@@ -43,6 +43,7 @@ body {
 }
 
 @media (min-width: 768px) {
+
   .base-grid,
   .n-header,
   .n-byline,
@@ -61,6 +62,7 @@ body {
 }
 
 @media (min-width: 1000px) {
+
   .base-grid,
   .n-header,
   .n-byline,
@@ -79,6 +81,7 @@ body {
 }
 
 @media (min-width: 1180px) {
+
   .base-grid,
   .n-header,
   .n-byline,
@@ -101,11 +104,11 @@ body {
 }
 
 /* default grid column assignments */
-.n-title > * {
+.n-title>* {
   grid-column: text;
 }
 
-.n-article > * {
+.n-article>* {
   grid-column: text;
 }
 

@@ -1,12 +1,12 @@
 # Astro Research Theme
 
+[![Built with Astro](https://astro.badg.es/v1/built-with-astro/small.svg)](https://astro.build)
+
 [![Deploy Astro site to Pages](https://github.com/AREA44/astro-research-theme/actions/workflows/pages.yml/badge.svg)](https://github.com/AREA44/astro-research-theme/actions/workflows/pages.yml)
 
-Preview on [GitHub Pages](https://area44.github.io/astro-research-theme)
+Preview on [GitHub Pages](https://area44.github.io/astro-research-theme).
 
-## 🚀 Commands
-
-All commands are run from the root of the project, from a terminal:
+## Runing locally
 
 | Command        | Action                                       |
 | :------------- | :------------------------------------------- |
@@ -14,8 +14,14 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm dev`     | Starts local dev server at `localhost:3000`  |
 | `pnpm build`   | Build your production site to `./dist/`      |
 | `pnpm preview` | Preview your build locally, before deploying |
+| `pnpm format ` | Format code with Prettier                    |
 
-## 🍔 Credits
+You can config options in `index.astro`.
 
-- [StyleGAN3 style](https://nvlabs.github.io/stylegan3)
-- [Pixabay](https://pixabay.com)
+## Credits
+
+This theme is based off of the [StyleGAN3 style](https://nvlabs.github.io/stylegan3).
+
+## License
+
+Licensed under the [MIT](./LICENSE) license.

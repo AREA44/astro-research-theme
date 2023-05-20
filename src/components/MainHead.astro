@@ -1,5 +1,5 @@
 ---
-import "../styles/global.css";
+import '../styles/global.css';
 
 interface Props {
   title?: string | undefined;
@@ -10,7 +10,7 @@ interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 if (Astro.props.ogImage === undefined) {
-  Astro.props.ogImage = new URL("banner.jpg", Astro.url);
+  Astro.props.ogImage = new URL('banner.jpg', Astro.url);
 }
 
 const { title, description, ogImage } = Astro.props;
@@ -41,7 +41,8 @@ const { title, description, ogImage } = Astro.props;
 <meta property="twitter:image" content={ogImage} />
 
 <link
+  rel="preload"
   href="https://fonts.googleapis.com/css?family=Montserrat|Segoe+UI"
-  rel="stylesheet"
-  crossorigin="anonymous"
+  as="font"
+  crossorigin
 />
