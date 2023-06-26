@@ -14,7 +14,7 @@
     "format": "prettier -w . --cache"
   },
   "dependencies": {
-    "astro": "^2.6.4"
+    "astro": "^2.7.0"
   },
   "devDependencies": {
     "prettier": "^2.8.8",
