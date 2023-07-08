@@ -1,8 +1,13 @@
 # Astro Research Theme
 
-[![Built with Astro](https://astro.badg.es/v1/built-with-astro/small.svg)](https://astro.build)
-
-[![Deploy Astro site to Pages](https://github.com/AREA44/astro-research-theme/actions/workflows/pages.yml/badge.svg)](https://github.com/AREA44/astro-research-theme/actions/workflows/pages.yml)
+<p>
+  <a href="https://astro.build">
+    <img src="https://astro.badg.es/v1/built-with-astro.svg" alt="Built with Astro" height="20">
+  </a>
+  <a href="https://github.com/AREA44/astro-research-theme/actions/workflows/pages.yml">
+    <img src="https://github.com/AREA44/astro-research-theme/actions/workflows/pages.yml/badge.svg" alt="Deploy Astro site to Pages">
+  </a>
+</p>
 
 Preview on [GitHub Pages](https://area44.github.io/astro-research-theme).
 
