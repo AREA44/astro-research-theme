@@ -1,5 +1,5 @@
 ---
-import MainHead from "../components/MainHead.astro";
+import BaseHead from "../components/BaseHead.astro";
 
 interface Props {
   title?: string | undefined;
@@ -12,7 +12,7 @@ const { title, description, ogImage } = Astro.props;
 
 <html lang="en">
   <head>
-    <MainHead title={title} description={description} ogImage={ogImage} />
+    <BaseHead title={title} description={description} ogImage={ogImage} />
   </head>
   <body>
     <slot />
