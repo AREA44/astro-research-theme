@@ -6,9 +6,21 @@
 html {
   font-size: 14px;
   line-height: 1.6;
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    'Noto Sans',
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
   text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -43,7 +55,6 @@ body {
 }
 
 @media (min-width: 768px) {
-
   .base-grid,
   .n-header,
   .n-byline,
@@ -62,7 +73,6 @@ body {
 }
 
 @media (min-width: 1000px) {
-
   .base-grid,
   .n-header,
   .n-byline,
@@ -81,7 +91,6 @@ body {
 }
 
 @media (min-width: 1180px) {
-
   .base-grid,
   .n-header,
   .n-byline,
@@ -104,11 +113,11 @@ body {
 }
 
 /* default grid column assignments */
-.n-title>* {
+.n-title > * {
   grid-column: text;
 }
 
-.n-article>* {
+.n-article > * {
   grid-column: text;
 }
 
