@@ -1,18 +1,22 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import Section from '@/components/Section.astro';
-import Video from '@/components/Video.astro';
+import { Image } from 'astro:assets'
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import Section from '@/components/Section.astro'
+import Video from '@/components/Video.astro'
 
 interface Props {
-  title?: string | undefined;
-  description?: string | undefined;
-  banner?: URL | undefined;
+  title?: string | undefined
+  description?: string | undefined
+  banner?: URL | undefined
 }
 
 // Your configuration options here
-let title = 'Astro Research Theme';
-let description = 'Simple Astro Theme for Research';
-let banner = './banner.jpg';
+import banner from '@/assets/banner.jpg'
+import downloadThumb from '@/assets/download-thumb.jpg'
+
+let title = 'Astro Research Theme'
+let description = 'Simple Astro Theme for Research'
 let authors = [
   {
     id: '1',
@@ -76,7 +80,7 @@ let links = [
 
   <div class="n-article">
     <div class="l-article">
-      <img src={banner} width="100%" alt="Banner"/>
+      <Image src={banner} width="100%" alt="Banner"/>
     </div>
 
     <Section id="Abstract">
@@ -95,9 +99,9 @@ let links = [
       <div class="grid download-section">
         <div class="download-thumb">
           <a href="https://raw.githubusercontent.com/AREA44/astro-research-theme/main/public/pdf-sample.pdf">
-            <img
+            <Image
+              src={downloadThumb}
               class="dropshadow"
-              src="./download-thumb.jpg"
               width="300"
               height="400"
               alt="Download Thumb"
