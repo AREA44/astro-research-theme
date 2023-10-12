@@ -1,6 +1,4 @@
 {
-  "installCommand": "pnpm install",
-  "buildCommand": "pnpm build",
   "sandboxes": ["vanilla", "new"],
-  "node": "20"
+  "node": "18"
 }
