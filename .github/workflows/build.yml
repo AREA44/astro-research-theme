@@ -14,11 +14,32 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
+
       - name: Install pnpm
         uses: pnpm/action-setup@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Restore Astro cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            dist
+          key: ${{ runner.os }}-astro-build-${{ hashFiles('dist') }}
+          restore-keys: |
+            ${{ runner.os }}-astro-build-
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v3
+
       - name: Install dependencies
         run: pnpm install
+
       - name: Build with Astro
         run: pnpm build
