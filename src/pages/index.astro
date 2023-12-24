@@ -26,13 +26,13 @@ let authors = [
     id: '1',
     name: 'Peter fadler',
   },
-];
+]
 let affiliations = [
   {
     id: '1',
     name: 'AREA44',
   },
-];
+]
 let links = [
   {
     id: 'Paper PDF',
@@ -46,7 +46,7 @@ let links = [
     id: 'Code release on GitHub',
     url: 'https://github.com/AREA44/astro-research-theme',
   },
-];
+]
 ---
 
 <BaseLayout title={title} description={description}>
@@ -80,7 +80,7 @@ let links = [
 
   <div class="n-article">
     <div class="l-article">
-      <Image src={banner} alt="Banner"/>
+      <Image src={banner} alt="Banner" />
     </div>
 
     <Section id="Abstract">
@@ -98,7 +98,9 @@ let links = [
     <Section id="Links">
       <div class="grid download-section">
         <div class="download-thumb">
-          <a href="https://raw.githubusercontent.com/AREA44/astro-research-theme/main/public/pdf-sample.pdf">
+          <a
+            href="https://raw.githubusercontent.com/AREA44/astro-research-theme/main/public/pdf-sample.pdf"
+          >
             <Image
               src={downloadThumb}
               class="dropshadow"
