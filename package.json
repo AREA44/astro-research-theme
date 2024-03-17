@@ -14,7 +14,7 @@
     "start": "astro dev"
   },
   "dependencies": {
-    "astro": "^4.4.15",
+    "astro": "^4.5.5",
     "sharp": "^0.33.2"
   },
   "devDependencies": {
