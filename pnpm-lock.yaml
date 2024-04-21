@@ -1,4 +1,4 @@
-lockfileVersion: '6.0'
+lockfileVersion: '9.0'
 
 settings:
   autoInstallPeers: true
@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       astro:
-        specifier: ^4.6.1
-        version: 4.6.1
+        specifier: ^4.6.3
+        version: 4.6.3
       sharp:
         specifier: ^0.33.3
         version: 0.33.3
@@ -661,11 +661,11 @@ packages:
   '@types/babel__traverse@7.18.5':
     resolution: {integrity: sha512-enCvTL8m/EHS/zIvJno9nE+ndYPh1/oNFzRYRmtUqJICG2VnCSBzMLW5VN2KCQU91f23tsNKR8v7VJJQMatl7Q==}
 
+  '@types/cookie@0.5.4':
+    resolution: {integrity: sha512-7z/eR6O859gyWIAjuvBWFzNURmf2oPBmJlfVWkwehU5nzIyjwBsTh7WMmEEV4JFnHuQ3ex4oyTvfKzcyJVDBNA==}
+
   '@types/debug@4.1.7':
     resolution: {integrity: sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg==}
-
-  '@types/estree@1.0.1':
-    resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -731,8 +731,8 @@ packages:
   array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
 
-  astro@4.6.1:
-    resolution: {integrity: sha512-gcL22NEhuRi4wu9/x5Kn2eJf7nT6GeU5BxdN6AHbUnX6UzEDIWtpgHs5lBIZYExKbHKN9PjEGXWQzQtFwLU+5g==}
+  astro@4.6.3:
+    resolution: {integrity: sha512-p2zs1Gac+ysdc/yFCoc8pOXTZE5L9foAtmqUzUVL22WX68bYTRovd03GRs7J1MDpwzsl9kJtlK20ROpjyIFpNw==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2510,11 +2510,11 @@ snapshots:
     dependencies:
       '@babel/types': 7.24.0
 
+  '@types/cookie@0.5.4': {}
+
   '@types/debug@4.1.7':
     dependencies:
       '@types/ms': 0.7.31
-
-  '@types/estree@1.0.1': {}
 
   '@types/estree@1.0.5': {}
 
@@ -2571,7 +2571,7 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro@4.6.1:
+  astro@4.6.3:
     dependencies:
       '@astrojs/compiler': 2.7.1
       '@astrojs/internal-helpers': 0.4.0
@@ -2584,6 +2584,7 @@ snapshots:
       '@babel/traverse': 7.24.1
       '@babel/types': 7.24.0
       '@types/babel__core': 7.20.5
+      '@types/cookie': 0.5.4
       acorn: 8.11.2
       aria-query: 5.3.0
       axobject-query: 4.0.0
@@ -2910,7 +2911,7 @@ snapshots:
 
   estree-walker@3.0.3:
     dependencies:
-      '@types/estree': 1.0.1
+      '@types/estree': 1.0.5
 
   eventemitter3@5.0.1: {}
 
@@ -4206,7 +4207,7 @@ snapshots:
       fsevents: 2.3.3
 
   vitefu@0.2.5(vite@5.2.8):
-    dependencies:
+    optionalDependencies:
       vite: 5.2.8
 
   web-namespaces@2.0.1: {}
