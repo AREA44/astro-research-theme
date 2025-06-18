@@ -218,7 +218,7 @@ strong {
   grid-column: text;
 }
 
-.byline {
+.n-byline .byline {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
@@ -358,8 +358,6 @@ pre {
   /* Firefox */
   -ms-user-select: none;
   /* Internet Explorer */
-  -khtml-user-select: none;
-  /* KHTML browsers (e.g. Konqueror) */
   -webkit-user-select: none;
   /* Chrome, Safari, and Opera */
   -webkit-touch-callout: none;
